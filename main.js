@@ -1,3 +1,4 @@
+
 var arguments = process.argv;
 
 var dataList = [];
@@ -10,6 +11,7 @@ if (arguments.length < 3) {
 for (var i = 2; i < arguments.length; i++) {
     dataList.push(arguments[i])
 }
+
 var resultList = [];
 for (var i = 0; i < dataList.length; i++) {
     //console.log(dataList[i])
@@ -43,3 +45,12 @@ for (var i = 0; i < dataList.length; i++) {
     }
     resultList.push(strValue)
 }
+
+var outputStr = "";
+for (var i = 0; i < resultList.length - 1; i++) {
+    outputStr = outputStr + resultList[i] + ","
+}
+if (resultList.length > 0)
+    outputStr = outputStr + resultList[resultList.length - 1];
+
+console.log(outputStr);
